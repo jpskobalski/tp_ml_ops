@@ -68,7 +68,7 @@ services:
 
   mlflow:
     build:
-      context: ./dockerfiles/
+      context: ./
       dockerfile: dockerfiles/Dockerfile.mlflow
     container_name: mlflow_server
     hostname: mlflow
@@ -108,7 +108,7 @@ services:
 
   airflow-init:
     build:
-      context: ./dockerfiles/
+      context: ./
       dockerfile: dockerfiles/Dockerfile.airflow
     container_name: airflow_init
     depends_on:
@@ -131,7 +131,7 @@ services:
 
   airflow-webserver:
     build:
-      context: ./dockerfiles/
+      context: ./
       dockerfile: dockerfiles/Dockerfile.airflow
     container_name: airflow_webserver
     restart: always
@@ -155,7 +155,7 @@ services:
 
   airflow-scheduler:
     build:
-      context: ./dockerfiles/
+      context: ./
       dockerfile: dockerfiles/Dockerfile.airflow
     container_name: airflow_scheduler
     restart: always
@@ -191,7 +191,7 @@ services:
   # ---- FastAPI ----
   api:
     build:
-      context: ./dockerfiles/
+      context: ./
       dockerfile: dockerfiles/Dockerfile.fastapi
     container_name: fastapi_server
     hostname: api
@@ -215,7 +215,7 @@ services:
   # ---- Streamlit ----
   streamlit:
     build:
-      context: ./dockerfiles/
+      context: ./
       dockerfile: dockerfiles/Dockerfile.streamlit
     container_name: streamlit_app
     hostname: streamlit
